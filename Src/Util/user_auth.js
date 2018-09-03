@@ -3,7 +3,7 @@ const knex = require('./knex');
 
 
 const get = async (userId) => {
-    const u = await knex('user_tb').select('user_id', 'token', 'user_name', 'company_id', 'mobile', 'email').where('user_id', userId).first();
+    const u = await knex('user_tb').select('user_id', 'token', 'user_name').where('user_id', userId).first();
     if (!u) {
         return { errno: 'ERR_USER_NOT_EXISTS' };
     }

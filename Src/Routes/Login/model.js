@@ -1,8 +1,7 @@
-
 const knex = require('../../Util/knex');
 const g = require('../../Util/global');
 
-exports.login = async (userName, password) => {
+exports.model = async (userName, password) => {
     const u = await knex('user_tb').select('user_id', 'password', 'token').where('user_name', userName).first();
     if (!u || g.md5(password) !== u.password) {
         return { errno: 'ERR_USER_LOGIN' };

@@ -1,11 +1,11 @@
-const g = require('../../Util/global');
+const g = require('../../../Util/global');
 const m = require('./model');
 
 exports.controller = async (req, res) => {
     try {
         const b = req.body;
         console.log(b);
-        const r = await m.model(b.user_name, b.password);
+        const r = await m.model(b.page,b.rows,b.user_name);
         if (r.errno) {
             return g.fail(req, res, r.errno);
         }

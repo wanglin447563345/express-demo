@@ -1,6 +1,10 @@
 const pkg = require('../../package');
 const { notFound } = require('../Util/global');
-const login = require('./login');
+const login = require('./Login');
+const create_user = require('./User/CreateUser');
+const delete_user = require('./User/DeleteUser');
+const edit_user = require('./User/EditUser');
+const list_user = require('./User/ListUser');
 
 
 module.exports = (app) => {
@@ -18,7 +22,11 @@ module.exports = (app) => {
         next();
     });
 
-    app.use('/api', login);
+    app.use('/api', [login,]);
+    app.use('/api', create_user);
+    app.use('/api', delete_user);
+    app.use('/api', edit_user);
+    app.use('/api', list_user);
 
     app.use(notFound);
 };

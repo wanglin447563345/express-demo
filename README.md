@@ -4,8 +4,8 @@ npm i
 
 
 # 启动
-
-node app.js
+npm install -g supervisor
+npm start
 
 # 使用pm2启动
 

@@ -4,7 +4,7 @@ npm i
 
 
 # 启动
-npm install -g supervisor
+npm install -g supervisor <br>
 npm start
 
 # 使用pm2启动

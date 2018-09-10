@@ -8,7 +8,6 @@ exports.model = async (page,rows,userName) => {
     }else {
          count = await knex('user_tb').count('user_id as c').first();
     }
-    console.log(count.c);
     const ret = g.pagination(count.c, page, rows);
 
     if (count.c === 0) {

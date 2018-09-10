@@ -5,6 +5,7 @@ const create_user = require('./User/CreateUser');
 const delete_user = require('./User/DeleteUser');
 const edit_user = require('./User/EditUser');
 const list_user = require('./User/ListUser');
+const list_article = require('./Article/ListArticle');
 
 
 module.exports = (app) => {
@@ -27,6 +28,7 @@ module.exports = (app) => {
     app.use('/api', delete_user);
     app.use('/api', edit_user);
     app.use('/api', list_user);
+    app.use('/api', list_article);
 
     app.use(notFound);
 };

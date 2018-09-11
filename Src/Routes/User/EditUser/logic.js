@@ -5,8 +5,4 @@ exports.logic = checkSchema({
         errorMessage: 'NEED_USER_NAME',
         exists: true,
     },
-    password: {
-        errorMessage: 'NEED_PASSWORD',
-        exists: true,
-    },
 });

@@ -1,5 +1,5 @@
-const knex = require('../../Util/knex');
-const g = require('../../Util/global');
+const knex = require('../../../Util/knex');
+const g = require('../../../Util/global');
 
 exports.model = async (userName, password) => {
     const u = await knex('user_tb').select('user_id', 'password', 'token').where('user_name', userName).first();

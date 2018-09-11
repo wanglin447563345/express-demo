@@ -1,4 +1,4 @@
-const g = require('../../Util/global');
+const g = require('../../../Util/global');
 const m = require('./model');
 
 exports.controller = async (req, res) => {

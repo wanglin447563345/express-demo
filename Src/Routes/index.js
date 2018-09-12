@@ -9,6 +9,8 @@ const list_article = require('./Article/ListArticle');
 const create_article = require('./Article/CreateArticle');
 const delete_article = require('./Article/DeleteArticle');
 const edit_article = require('./Article/EditArticle');
+const type_sum = require('./Dashboard/TypeSum');
+const upload = require('./Common/Upload');
 
 
 module.exports = (app) => {
@@ -35,6 +37,8 @@ module.exports = (app) => {
     app.use('/api', create_article);
     app.use('/api', delete_article);
     app.use('/api', edit_article);
+    app.use('/api', type_sum);
+    app.use('/api', upload);
 
     app.use(notFound);
 };

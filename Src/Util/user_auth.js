@@ -12,10 +12,9 @@ const get = async (userId) => {
 
 exports.auth = async (req, res, next) => {
     req.queryTime = Math.round(new Date().getTime() / 1000);
-    const cc = req.get('X-Beancomm-CompanyCode');
     const uid = req.get('X-Beancomm-UserId');
     const tk = req.get('X-Beancomm-Token');
-    if (typeof cc === 'undefined' || typeof uid === 'undefined' || typeof tk === 'undefined') {
+    if (typeof uid === 'undefined' || typeof tk === 'undefined') {
         return g.fail(req, res, 'ERR_USER_AUTH_INS_HEADERS');
     }
     try {

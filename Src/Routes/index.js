@@ -10,6 +10,9 @@ const create_article = require('./Article/CreateArticle');
 const delete_article = require('./Article/DeleteArticle');
 const edit_article = require('./Article/EditArticle');
 const type_sum = require('./Dashboard/TypeSum');
+const click_sum = require("./Dashboard/ClickSum");
+const count_add = require("./Dashboard/CountAdd");
+const list_discuss = require("./Discuss/DiscussList");
 const upload = require('./Common/Upload');
 
 
@@ -20,7 +23,7 @@ module.exports = (app) => {
 
     app.use((req, res, next) => {
         res.set('Access-Control-Allow-Origin', req.get('origin') || '*');
-        res.set('Access-Control-Allow-Headers', 'X-Beancomm-Token');
+        res.set('Access-Control-Allow-Headers', 'Content-Type, X-Beancomm-Token, X-Beancomm-UserId');
         res.set('Access-Control-Request-Method', 'GET,POST,PUT,DELETE');
         res.set('Access-Control-Allow-Credentials', 'true');
         res.set('Access-Control-Allow-Origin', req.get('origin') || '*');
@@ -38,6 +41,9 @@ module.exports = (app) => {
     app.use('/api', delete_article);
     app.use('/api', edit_article);
     app.use('/api', type_sum);
+    app.use('/api', click_sum);
+    app.use('/api', count_add);
+    app.use('/api', list_discuss);
     app.use('/api', upload);
 
     app.use(notFound);

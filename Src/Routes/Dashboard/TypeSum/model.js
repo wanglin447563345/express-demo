@@ -12,6 +12,6 @@ exports.model = async (b) => {
         series_data.push(item);
         legend_data.push(name)
     }
-    const data={series_data,legend_data}
+    const data={series_data,legend_data};
     return { errno: '', data };
 }

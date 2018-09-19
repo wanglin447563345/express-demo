@@ -21,16 +21,6 @@ module.exports = (app) => {
         res.send(`${pkg.name}`);
     });
 
-    app.use((req, res, next) => {
-        res.set('Access-Control-Allow-Origin', req.get('origin') || '*');
-        res.set('Access-Control-Allow-Headers', 'Content-Type, X-Beancomm-Token, X-Beancomm-UserId');
-        res.set('Access-Control-Request-Method', 'GET,POST,PUT,DELETE');
-        res.set('Access-Control-Allow-Credentials', 'true');
-        res.set('Access-Control-Allow-Origin', req.get('origin') || '*');
-        res.set('Access-Control-Expose-Headers', 'X-Beancomm-Token');
-        next();
-    });
-
     app.use('/api', [login,]);
     app.use('/api', create_user);
     app.use('/api', delete_user);

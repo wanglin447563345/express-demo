@@ -4,7 +4,7 @@ const m = require('./model');
 exports.controller = async (req, res) => {
     try {
         const b = req.body;
-        console.log(b);
+console.log(b)
         const r = await m.model(b.page,b.rows,b.title,b.type_id);
         if (r.errno) {
             return g.fail(req, res, r.errno);

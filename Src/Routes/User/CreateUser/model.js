@@ -10,10 +10,12 @@ exports.model = async (userName,password,control_user) => {
     const token=g.md5(userName+password+Math.random());
     const cu = await knex('user_tb').insert([{
         user_name:userName,
-        password:g.md5(password),
-        c_time:c_time,token:token,
+        password:password,
+        c_time:c_time,
+        token:token,
         control_user:control_user
     }]);
+    console.log(cu);
     if(cu){
         return { errno: ''};
     }

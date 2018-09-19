@@ -15,7 +15,7 @@ app.use((req, res, next) => { //这个要放在验证身份前，不然会出现
     res.set('Access-Control-Expose-Headers', 'X-Beancomm-Token');
     next();
 });
-app.use(/^\/api\/(?!login)(?!list_article)(?!create_user).*/, userAuth);   //不要验证身份的接口
+app.use(/^\/api\/(?!login)(?!list_article)(?!create_user)(?!detail_article).*/, userAuth);   //不要验证身份的接口
 const routes = require('./Src/Routes');
 routes(app);
 

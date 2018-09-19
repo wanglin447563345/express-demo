@@ -1,5 +1,4 @@
 const knex = require('../../../Util/knex');
-const g = require("../../../Util/global");
 
 exports.model = async (b) => {
     const datas = await knex.select("*").from('click_count_tb');
@@ -13,5 +12,5 @@ exports.model = async (b) => {
         const data={series_data,legend_data};
         return { errno: '', data };
     }
-    return { errno: 'UNKNOW' };
+    return { errno: 'UNKNOWN_ERROR'};
 };

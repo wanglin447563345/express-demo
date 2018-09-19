@@ -1,8 +1,7 @@
 const knex = require('../../../Util/knex');
-const g = require('../../../Util/global');
 
 exports.model = async (userName, password) => {
-    const u = await knex('user_tb').select('user_id', 'password', 'token','control_user').where('user_name', userName).first();
+    const u = await knex('user_tb').select('user_id', 'password', 'token','control_user',"user_name").where('user_name', userName).first();
     if (!u || password !== u.password) {
         return { errno: 'ERR_USER_LOGIN' };
     }
@@ -11,6 +10,7 @@ exports.model = async (userName, password) => {
         user_id: u.user_id,
         token: u.token,
         control_user:u.control_user,
+        user_name:u.user_name
     };
     return { errno: '', data: ret };
 };

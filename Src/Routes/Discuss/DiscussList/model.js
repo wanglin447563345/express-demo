@@ -29,6 +29,5 @@ exports.model = async (b) =>{
                 .orderBy('use_count', 'desc');
         }
     }
-    console.log(ret);
     return { errno: '', data: ret };
 }

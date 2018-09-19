@@ -4,7 +4,6 @@ const g = require("../../../Util/global");
 exports.controller = async (req, res)=>{
     try {
         const b = req.body;
-        console.log(b);
         const r = await m.model(b);
         if (r.errno) {
             return g.fail(req, res, r.errno);

@@ -1,9 +1,9 @@
 const knex = require('../../../Util/knex');
 
 exports.model = async (b) =>{
-   const d = await knex('click_count_tb').where({link_id:b.link_id}).increment('count', 1);
+    const d = await knex("article_tb").select("*").where("article_id",b.article_id);
     if(d){
-       return {errno:''}
+        return {errno:'', data:d}
     }
     return { errno: 'UNKNOWN_ERROR'};
 }

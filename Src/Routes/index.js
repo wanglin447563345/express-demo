@@ -9,10 +9,12 @@ const list_article = require('./Article/ListArticle');
 const create_article = require('./Article/CreateArticle');
 const delete_article = require('./Article/DeleteArticle');
 const edit_article = require('./Article/EditArticle');
+const detail_article = require("./Article/DetailArticle");
 const type_sum = require('./Dashboard/TypeSum');
 const click_sum = require("./Dashboard/ClickSum");
 const count_add = require("./Dashboard/CountAdd");
 const list_discuss = require("./Discuss/DiscussList");
+const create_type = require("./Article/AddArticleType");
 const upload = require('./Common/Upload');
 
 
@@ -28,12 +30,14 @@ module.exports = (app) => {
     app.use('/api', list_user);
     app.use('/api', list_article);
     app.use('/api', create_article);
+    app.use('/api', detail_article);
     app.use('/api', delete_article);
     app.use('/api', edit_article);
     app.use('/api', type_sum);
     app.use('/api', click_sum);
     app.use('/api', count_add);
     app.use('/api', list_discuss);
+    app.use('/api', create_type);
     app.use('/api', upload);
 
     app.use(notFound);

@@ -5,5 +5,6 @@ exports.model = async (userId) => {
     if(d){
         return { errno: ''};
     }
+    return { errno: 'UNKNOWN_ERROR'};
 };
 

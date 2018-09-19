@@ -15,7 +15,6 @@ exports.model = async (page,rows,title, type_id) => {
     const ret = g.pagination(count.c, page, rows);
 
     if (count.c === 0) {
-        console.log(title)
         ret.data = [];
     } else {
         if(title){
@@ -34,7 +33,7 @@ exports.model = async (page,rows,title, type_id) => {
                 .from('article_tb')
                 .leftJoin("user_tb","article_tb.creator_id","user_id")
                 .leftJoin("article_type_tb","article_type_tb.id","type_id")
-                .where('type', type_id)
+                .where('type_id', type_id)
                 .limit(ret.numberPerPage)
                 .offset(ret.from)
                 .orderBy('article_id', 'desc');
@@ -50,6 +49,5 @@ exports.model = async (page,rows,title, type_id) => {
         }
     }
 
-    console.log(ret.data)
     return { errno: '', data: ret };
 };

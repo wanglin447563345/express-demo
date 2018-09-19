@@ -31,7 +31,6 @@ exports.model = async (page,rows,userName) => {
         }
 
     }
-    console.log(ret.data)
     return { errno: '', data: ret };
 };
 

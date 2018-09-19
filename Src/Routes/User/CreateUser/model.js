@@ -15,7 +15,6 @@ exports.model = async (userName,password,control_user) => {
         token:token,
         control_user:control_user
     }]);
-    console.log(cu);
     if(cu){
         return { errno: ''};
     }

@@ -21,7 +21,6 @@ exports.processValidator = (req, res, next) => {
         let ret = '';
         const mappedErr = err.mapped();
         Object.keys(mappedErr).map((d) => {
-            console.log(d);
             if (ret) {
                 ret += '|';
             }

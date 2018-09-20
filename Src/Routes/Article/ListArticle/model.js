@@ -19,7 +19,7 @@ exports.model = async (page,rows,title, type_id) => {
     } else {
         if(title){
             ret.data = await knex
-                .select("article_tb.article_id","article_tb.title","article_tb.description","article_tb.count_read","article_tb.c_time","article_tb.content",'user_tb.user_name','article_type_tb.type')
+                .select("article_tb.article_id","article_tb.title","article_tb.description","article_tb.count_read","article_tb.img_url","article_tb.c_time","article_tb.content",'user_tb.user_name','article_type_tb.type')
                 .from('article_tb')
                 .leftJoin("user_tb","article_tb.creator_id","user_id")
                 .leftJoin("article_type_tb","article_type_tb.id","type_id")
@@ -29,7 +29,7 @@ exports.model = async (page,rows,title, type_id) => {
                 .orderBy('article_id', 'desc');
         }else if(type_id) {
             ret.data = await knex
-                .select("article_tb.article_id","article_tb.title","article_tb.description","article_tb.count_read","article_tb.c_time","article_tb.content",'user_tb.user_name','article_type_tb.type')
+                .select("article_tb.article_id","article_tb.title","article_tb.description","article_tb.count_read","article_tb.img_url","article_tb.c_time","article_tb.content",'user_tb.user_name','article_type_tb.type')
                 .from('article_tb')
                 .leftJoin("user_tb","article_tb.creator_id","user_id")
                 .leftJoin("article_type_tb","article_type_tb.id","type_id")
@@ -39,7 +39,7 @@ exports.model = async (page,rows,title, type_id) => {
                 .orderBy('article_id', 'desc');
         }else {
             ret.data = await knex
-                .select("article_tb.article_id","article_tb.title","article_tb.description","article_tb.count_read","article_tb.c_time","article_tb.content",'user_tb.user_name','article_type_tb.type')
+                .select("article_tb.article_id","article_tb.title","article_tb.description","article_tb.count_read","article_tb.img_url","article_tb.c_time","article_tb.content",'user_tb.user_name','article_type_tb.type')
                 .from('article_tb')
                 .leftJoin("user_tb","article_tb.creator_id","user_id")
                 .leftJoin("article_type_tb","article_type_tb.id","type_id")

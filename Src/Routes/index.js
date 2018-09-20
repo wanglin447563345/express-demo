@@ -15,6 +15,8 @@ const click_sum = require("./Dashboard/ClickSum");
 const count_add = require("./Dashboard/CountAdd");
 const list_discuss = require("./Discuss/DiscussList");
 const create_type = require("./Article/AddArticleType");
+const delete_type = require("./Article/DeleteArticleType");
+const edit_type = require("./Article/EditArticleType");
 const upload = require('./Common/Upload');
 
 
@@ -38,6 +40,8 @@ module.exports = (app) => {
     app.use('/api', count_add);
     app.use('/api', list_discuss);
     app.use('/api', create_type);
+    app.use('/api', delete_type);
+    app.use('/api', edit_type);
     app.use('/api', upload);
 
     app.use(notFound);

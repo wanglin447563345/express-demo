@@ -13,7 +13,8 @@ exports.error = {
     ERR_USER_AUTH_INS_HEADERS: [21003, '用户认证失败，缺少header'],
     ERR_USER_AUTH_TOKEN: [21004, '用户认证失败，token错误'],
 
-    ERR_USER_EXITED:[32001,"该用户名已被占用"]
+    ERR_USER_EXITED:[32001,"该用户名已被占用"],
+    TYPE_EXITED:[32002,"该分类名已存在"]
 };
 
 exports.message = {

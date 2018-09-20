@@ -1,9 +1,12 @@
 const express = require("express");
+const path = require("path");
 const app = express();
 
 const bodyParser = require("body-parser");
+// 指定静态文件目录
+app.use(express.static(path.join(__dirname, '/public')));
 // parse various different custom JSON types as JSON
-app.use(bodyParser.json({type:"application/json",uploadDir:'./uploads'}));
+app.use(bodyParser.json({type:"application/json"}));
 
 const userAuth = require('./Src/Util/user_auth').auth;
 app.use((req, res, next) => { //这个要放在验证身份前，不然会出现要验证身份的接口会跨域，不要验证身份的接口不跨域

@@ -9,7 +9,8 @@ exports.model = async (body) =>{
         type_id:body.type_id,
         description:body.description,
         content:body.content,
-        c_time:c_time
+        img_url:body.img_url,
+        c_time:c_time,
     });
     if(ca){
         return { errno: ''};

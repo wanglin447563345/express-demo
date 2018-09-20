@@ -8,6 +8,7 @@ exports.model = async (body) => {
         type_id:body.type_id,
         description:body.description,
         content:body.content,
+        img_url:body.img_url,
         c_time:c_time
     });
     if(d){
